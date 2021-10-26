@@ -1,20 +1,23 @@
-import React, { useState } from 'react';
+import jadiVsDarkseidApi from '../../api/jadiVsDarkseidApi'
+import React, { useState, useEffect } from 'react';
 
 import { useAppSelector, useAppDispatch } from '../../app/hooks';
 import {
-  chooseYourPathAsync,
+  fetchYourPath,
   selectFetchStatus,
 } from './jediVsDarkseidSlice';
 
 import { Container } from './styles';
+import lukeImg from './imgs/luke-skywalker.png'
+import vaderImg from './imgs/luke-skywalker.png'
 
 const darth_vader = './imgs/darth-vader.png'
 const luke_skywalker = './imgs/luke-skywalker.png'
 
 const JediVsDarkseid: React.FC = () => {
+
   const fetchStatus = useAppSelector(selectFetchStatus);
   const dispatch = useAppDispatch();
-  const [incrementAmount, setIncrementAmount] = useState('2');
   
   return (
     <Container>
@@ -22,10 +25,10 @@ const JediVsDarkseid: React.FC = () => {
         GO BACK
       </div>
     
-      <button onClick={() => dispatch(chooseYourPathAsync())}>
+      <button onClick={() => dispatch(fetchYourPath())}>
         choose your path again, Padawan
       </button>
-      <img src={darth_vader} alt="your_master" width="100%" height="100%">
+      <img src={lukeImg} alt="your_master" width="100%" height="100%">
 
       </img>
       <span>
