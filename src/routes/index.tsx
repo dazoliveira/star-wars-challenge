@@ -7,7 +7,7 @@ import JediVsDarkseid from '../features/jediVsDarkseid/JediVsDarkseid';
 const Routes: React.FC = () => {
   return (
     <Switch>
-      <Route path="/" exact component={Welcome} />
+      <Route path="/welcome" exact component={Welcome} />
       <Route path="/jedi-vs-darkside" exact component={JediVsDarkseid} />
     </Switch>
   );
