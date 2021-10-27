@@ -1,8 +1,8 @@
-import { IJediVsDarkseidDTO, IResourceDTO } from "models"
+import { JediVsDarkseid, Resource } from "models"
 import axiosClient from "./exiosClient"
 
 const jediVsDarkseidApi = {
-    async getPathByMaster({ resource }: IResourceDTO): Promise<IJediVsDarkseidDTO>{
+    async getPathByMaster({ resource }: Resource): Promise<JediVsDarkseid>{
         const url = `/people/${resource}`
         return await axiosClient.get(url)
     }

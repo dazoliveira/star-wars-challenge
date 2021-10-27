@@ -1,3 +1,3 @@
-export interface IResourceDTO{
+export interface Resource{
     resource: string
 }

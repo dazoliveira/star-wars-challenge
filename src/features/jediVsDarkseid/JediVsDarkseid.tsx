@@ -8,9 +8,9 @@ import {
   selectYourPath,
 } from './jediVsDarkseidSlice';
 
-import { Container } from './styles';
 import lukeImg from './imgs/luke-skywalker.png'
 import vaderImg from './imgs/darth-vader.png'
+import { Button } from '@material-ui/core';
 
 const JediVsDarkseid: React.FC = () => {
 
@@ -22,22 +22,21 @@ const JediVsDarkseid: React.FC = () => {
   const dispatch = useAppDispatch();
   
   return (
-    <Container>
+    <>
       <div>
         GO BACK
       </div>
     
-      <button onClick={() => dispatch(fetchYourPath())}>
+      <Button onClick={() => dispatch(fetchYourPath())} disabled={fetchStatus === 'loading'}>
         choose your path again, Padawan
-      </button>
+      </Button>
       <img src={yourPath === 'jedi'? lukeImg : vaderImg} alt="your_master" width="100%" height="100%">
 
       </img>
       <span>
         Your master is {masterName}
       </span>
-   
-    </Container>
+    </>
   );
 }
 

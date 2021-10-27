@@ -1,2 +1,2 @@
-export * from './jediVsDarkseidDTO'
+export * from './jediVsDarkseid'
 export * from './common'

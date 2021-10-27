@@ -1,3 +1,3 @@
-export interface IJediVsDarkseidDTO {
+export interface JediVsDarkseid {
     name: "Darth Vader" | 'Luke Skywalker'
 }

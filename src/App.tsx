@@ -1,12 +1,14 @@
-import React from 'react';
-import { BrowserRouter as Router } from 'react-router-dom';
+import JediVsDarkseid from 'features/jediVsDarkseid/JediVsDarkseid';
+import Welcome from 'features/welcome/Welcome';
+import { Switch, Route } from 'react-router-dom';
 
-import Routes from './routes';
-
-const App: React.FC = () => {
+const App = () => {
   return (
     <>
-      <Routes />
+      <Switch>
+        <Route path="/welcome" exact component={Welcome} />
+        <Route path="/jedi-vs-darkside" exact component={JediVsDarkseid} />
+      </Switch>
     </>
   );
 };
