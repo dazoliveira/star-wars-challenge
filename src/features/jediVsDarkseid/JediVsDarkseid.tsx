@@ -11,6 +11,7 @@ import {
 import lukeImg from './imgs/luke-skywalker.png'
 import vaderImg from './imgs/darth-vader.png'
 import { Button } from '@material-ui/core';
+import { NavLink } from 'react-router-dom';
 
 const JediVsDarkseid: React.FC = () => {
 
@@ -21,11 +22,16 @@ const JediVsDarkseid: React.FC = () => {
 
   const dispatch = useAppDispatch();
   
+  console.log('RE-RENDER')
+
   return (
     <>
+      <NavLink to='/welcome'>
+
       <div>
         GO BACK
       </div>
+      </NavLink>
     
       <Button onClick={() => dispatch(fetchYourPath())} disabled={fetchStatus === 'loading'}>
         choose your path again, Padawan

@@ -31,10 +31,13 @@ export const jediVsDarkseidSlice = createSlice({
       state.masterName = action.payload.masterName;
       state.yourPath = action.payload.yourPath
     },
+    clean: (state) => {
+      state = initialState;
+    },
   },
 });
 
-export const { fetchYourPath, fetchYourPathSuccess } = jediVsDarkseidSlice.actions;
+export const { fetchYourPath, fetchYourPathSuccess, clean } = jediVsDarkseidSlice.actions;
 
 export const selectFetchStatus = (state: RootState) => state.jediVsDarkseid.status;
 export const selectMasterName = (state: RootState) => state.jediVsDarkseid.masterName;

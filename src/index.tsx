@@ -7,16 +7,13 @@ import * as serviceWorker from './serviceWorker';
 import { ConnectedRouter } from 'connected-react-router';
 import { history } from 'utils';
 import { CssBaseline } from '@material-ui/core';
-import { BrowserRouter } from 'react-router-dom';
 
 ReactDOM.render(
   <React.StrictMode>
     <Provider store={store}>
       <ConnectedRouter history={history}>
-        <BrowserRouter>        
-          <CssBaseline />
-          <App />
-        </BrowserRouter>
+        <CssBaseline />
+        <App />
       </ConnectedRouter>
     </Provider>
   </React.StrictMode>,
