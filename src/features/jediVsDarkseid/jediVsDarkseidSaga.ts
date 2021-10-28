@@ -20,8 +20,6 @@ function* fetchWinnerPath() {
         // TODO: handle ERROR
         console.log('LOG:', error)
         yield put(clean());
-        yield put(push('/welcome'))
-
     }
   }
 

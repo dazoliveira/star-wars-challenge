@@ -69,6 +69,15 @@ const theme = createTheme({
       lineHeight: '88px',
       letterSpacing: 'inherit',
     },
+    h3: {
+      fontFamily: [
+        'Montserrat',
+      ].join(','),
+      fontSize: '36px',
+      fontWeight: 'normal',
+      lineHeight: '44px',
+      letterSpacing: 'inherit',
+    },       
     subtitle2:{
       fontFamily: [
         'Montserrat',
