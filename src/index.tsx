@@ -12,10 +12,20 @@ import { history } from 'utils';
 
 const theme = createTheme({
   spacing: 6,
+  breakpoints: {
+    values: {
+      xs: 0,
+      sm: 625,
+      md: 960,
+      lg: 1280,
+      xl: 1920,
+    },
+  },
   props: {
     MuiTypography: {
       variantMapping: {
         subtitle2: 'p',
+        caption: 'span'
       },
     },
   },
@@ -78,10 +88,10 @@ const theme = createTheme({
       // contrastText: será calculada para contrastar com palette.primary.main
     },
     secondary: {
-      light: '#2C97D1',
-      main: '#2C97D1',
-      // dark: será calculada com base palette.secondary.main,
-      contrastText: '#2C97D1',
+      light: '#FBFE63',
+      main: '#FFFFFF',
+      // dark: será calculada com base em palette.primary.main,
+      contrastText: '#2A2A2A',
     },
     // Usado por `getContrastText()` para maximizar o contraste entre
     // o plano de fundo e o texto.
