@@ -93,8 +93,8 @@ const useStyles = makeStyles((theme: Theme) => createStyles({
     ? theme.palette.secondary.contrastText
     : theme.palette.secondary.main,
     '& span': {
-      fontWeight: '700',
-      marginLeft: '8px'
+      fontWeight: 700,
+      marginLeft: '0.625rem'
     }
   }
 }))
@@ -160,7 +160,7 @@ const JediVsDarkseid = () => {
               align='center'
               className={classes.masterName}
             >
-              Your master is<span>{masterName}</span>
+              Your master is<span>{masterName || '. . .'}</span>
             </Typography>
           </Grid>  
         </Grid>
