@@ -3,6 +3,7 @@ import { Container, Grid, useMediaQuery } from '@material-ui/core';
 
 import {
   fetchYourPath,
+  selectFetchStatus,
   selectMasterName,
   selectYourPath,
 } from './jediVsDarkseidSlice';
@@ -20,6 +21,7 @@ const JediVsDarkseid = () => {
   const dispatch = useAppDispatch();
   const isMobile = useMediaQuery('(max-width:600px)');
   const yourPath = useAppSelector(selectYourPath);
+  const fetchStatus = useAppSelector(selectFetchStatus)
   const isJedi = useMemo(() => {
     return yourPath === 'jedi'
   },[yourPath] )
@@ -42,6 +44,7 @@ const JediVsDarkseid = () => {
             isMobile={isMobile} 
             text='choose your path again, Padawan'
             handleOnClick={() => dispatch(fetchYourPath())}
+            isDisabled={fetchStatus === 'loading'}
           />
           <MasterAvatar 
             avatarSrc={isJedi ? lukeImg : vaderImg} 

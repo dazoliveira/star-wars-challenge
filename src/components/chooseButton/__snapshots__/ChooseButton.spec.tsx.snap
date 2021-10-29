@@ -1,0 +1,24 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<ChooseButton /> should render choose button 1`] = `
+<div
+  class="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-12"
+  data-testid="choose-button"
+  style="text-align: center;"
+>
+  <button
+    class="MuiButtonBase-root MuiButton-root MuiButton-contained makeStyles-root-1 makeStyles-root-2"
+    tabindex="0"
+    type="button"
+  >
+    <span
+      class="MuiButton-label"
+    >
+      Choose your path, Pad
+    </span>
+    <span
+      class="MuiTouchRipple-root"
+    />
+  </button>
+</div>
+`;

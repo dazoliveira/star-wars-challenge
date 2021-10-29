@@ -1,6 +1,6 @@
 import { Grid, Typography } from "@material-ui/core";
 
-type BrandTitleProps = {
+export type BrandTitleProps = {
     welcomeText: string
     subTitle: string
     brandName: string
@@ -13,6 +13,8 @@ export default function BrandTitle({ welcomeText, subTitle, brandName }: BrandTi
           direction="column"
           justifyContent="center"
           alignItems="center"
+          data-testid='brand-title'
+          container
         >
           <Grid item xs={12}>
             <Typography variant='h2' color='primary' align='center' gutterBottom>
