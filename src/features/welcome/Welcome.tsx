@@ -1,36 +1,8 @@
-import { Box, Button, Grid, Theme, Typography } from "@material-ui/core";
-import { createStyles, makeStyles } from "@material-ui/styles";
+import { Box, Button, Grid, Typography } from "@material-ui/core";
+
 import { useAppDispatch, useAppSelector } from "app/hooks";
 import { fetchYourPath, selectFetchStatus } from "features/jediVsDarkseid/jediVsDarkseidSlice";
-
-const useStyles = makeStyles((theme: Theme) => createStyles({
-  root: {
-    display: 'flex',
-    minWidth: '688px',
-    flexDirection: 'column',
-    flexFlow: 'row nowrap',
-    justifyContent: 'flex-start',
-    alignItems: 'center',
-    minHeight: '100vh',
-    marginTop: '210px',
-    '& .MuiTypography-gutterBottom': {
-      marginBottom: theme.spacing(1) + 1
-    }
-  },
-  buttonBox: {
-    width: '189px',
-  },
-  startButton: {
-    '& .MuiButton-label': {
-      fontWeight: '700',
-      lineHeight: '21.94px', 
-      fontSize: '18px'
-    }
-  },
-  startButtonLabel:{
-    
-  }
-}))
+import { useStyles } from "./styles";
 
 export default function Welcome() {
 
@@ -59,7 +31,14 @@ export default function Welcome() {
 
         </Grid>
         <Box className={classes.buttonBox} mt={27}>
-          <Button className={classes.startButton} disabled={fetchStatus === 'loading'} fullWidth variant="contained" color="primary" onClick={() => dispatch(fetchYourPath())}>
+          <Button 
+            className={classes.startButton}
+            disabled={fetchStatus === 'loading'} 
+            fullWidth 
+            variant="contained" 
+            color="primary" 
+            onClick={() => dispatch(fetchYourPath())}
+          >
             S T A R T
           </Button>
         </Box>

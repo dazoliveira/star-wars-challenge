@@ -10,6 +10,12 @@ import { store } from './app/store';
 import * as serviceWorker from './serviceWorker';
 import { history } from 'utils';
 
+declare module "@material-ui/core/styles/createBreakpoints" {
+  interface BreakpointOverrides {
+    mobile: true; // adiciona o ponto de quebra `mobile`
+  }
+}
+
 const theme = createTheme({
   spacing: 6,
   breakpoints: {
@@ -19,6 +25,7 @@ const theme = createTheme({
       md: 960,
       lg: 1280,
       xl: 1920,
+      mobile: 474,
     },
   },
   props: {
@@ -87,6 +94,14 @@ const theme = createTheme({
       lineHeight: '17px',
       textTransform: 'uppercase',
       letterSpacing: '0.35em',
+    },
+    body1:{
+      fontFamily: [
+        'Montserrat',
+      ].join(','),
+      fontSize: '18px',
+      fontWeight: 400,
+      lineHeight: '22px',
     },
   },
   palette: {
