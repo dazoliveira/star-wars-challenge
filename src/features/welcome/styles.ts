@@ -25,7 +25,4 @@ export const useStyles = makeStyles((theme: Theme) => createStyles({
       fontSize: '18px'
     }
   },
-  startButtonLabel:{
-    
-  }
 }))

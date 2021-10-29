@@ -1,6 +1,7 @@
-import { Box, Button, Grid, Typography } from "@material-ui/core";
+import { Box, Button } from "@material-ui/core";
 
 import { useAppDispatch, useAppSelector } from "app/hooks";
+import BrandTitle from "components/brandTitle/BrandTitle";
 import { fetchYourPath, selectFetchStatus } from "features/jediVsDarkseid/jediVsDarkseidSlice";
 import { useStyles } from "./styles";
 
@@ -13,23 +14,11 @@ export default function Welcome() {
 
   return (
     <div className={classes.root}>
-        <Grid 
-          direction="column"
-          justifyContent="center"
-          alignItems="center"
-        >
-          <Grid item xs={12}>
-            <Typography variant='h2' color='primary' align='center' gutterBottom>
-              Welcome to <Typography variant='h1' component='span'>IClinic</Typography>
-            </Typography>
-          </Grid>
-          <Grid item xs={12}>
-            <Typography color='primary' variant='subtitle2' align='center'>
-              frontend challenge
-            </Typography>
-          </Grid>
-
-        </Grid>
+        <BrandTitle 
+          brandName='iClinic'
+          subTitle='frontend challenge'
+          welcomeText='Welcome to'
+        />
         <Box className={classes.buttonBox} mt={27}>
           <Button 
             className={classes.startButton}
