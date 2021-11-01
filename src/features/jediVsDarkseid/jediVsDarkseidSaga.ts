@@ -4,7 +4,7 @@ import { push } from "connected-react-router";
 import { clean, fetchYourPath, fetchYourPathSuccess } from "./jediVsDarkseidSlice"
 
 
-function* fetchWinnerPath() {
+export function* fetchWinnerPath() {
     try {
         const {lucke, vader} = yield race({
             vader: call(jediVsDarkseidApi.getPathByMaster, {resource: '4'}),

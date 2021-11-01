@@ -1,5 +1,4 @@
 import { screen } from '@testing-library/react'
-import userEvent from '@testing-library/user-event';
 import { renderWithTheme } from "utils/tests/helpers";
 import MasterAvatar, { MasterAvatarProps } from './MasterAvatar';
 import imgTest from '../../features/jediVsDarkseid/imgs/luke-skywalker.png'
@@ -22,16 +21,10 @@ describe('<MasterAvatar />', () => {
 
     })
 
-    // it('should back to /welcome url on back click', async () => {
-    //    const { getByText } = renderWithTheme(<MasterAvatar {...props} />)
+    it('should render Luck Skywalker image', async () => {
+       renderWithTheme(<MasterAvatar {...props} />)
 
-    //     const link = getByText(/back/i)
-
-    //     userEvent.click(link)
-
-    //     const location = window.location.pathname
-    //     const welcomePage = '/welcome'
-
-    //     expect(location).toEqual(welcomePage)
-    // })
+       const displayedImage = document.querySelector("img") as HTMLImageElement;
+       expect(displayedImage.src).toContain("luke-skywalker.png");
+    })
 });

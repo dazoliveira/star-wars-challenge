@@ -8,7 +8,7 @@ exports[`<MasterAvatar /> should render master avatar 1`] = `
     class="MuiAvatar-root MuiAvatar-circular makeStyles-avatar-1 makeStyles-avatar-3"
   >
     <img
-      alt="Your Master"
+      alt="Luke Skywalker"
       class="MuiAvatar-img"
       src="luke-skywalker.png"
     />

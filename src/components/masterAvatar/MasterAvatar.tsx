@@ -1,7 +1,5 @@
 import React from "react";
 import { Avatar, Grid, Typography } from "@material-ui/core";
-import { useAppSelector } from "app/hooks";
-import { RootState } from "app/store";
 import { useStyles } from "./styles";
 
 export type MasterAvatarProps = {
@@ -26,7 +24,7 @@ export default function MasterAvatar({ variant, isMobile, avatarSrc, avatarName,
           xs={12}
         >          
         <Avatar 
-          alt="Your Master"
+          alt={avatarName || 'master-avatar'}
           src={avatarSrc}
           className={classes.avatar} 
         />            

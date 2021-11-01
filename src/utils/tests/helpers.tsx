@@ -1,9 +1,15 @@
 import { ThemeProvider } from "@material-ui/styles";
 import { render, RenderResult } from '@testing-library/react'
+import { store } from "app/store";
+import { Provider } from 'react-redux';
+import { globalTheme } from "../../globalStyles";
 
-import { globalTheme } from '../../globalStyles'
 
 export const renderWithTheme = (children: React.ReactNode): RenderResult => (
-    render(<ThemeProvider theme={globalTheme}>{children}</ThemeProvider>)
+    render(
+        <Provider store={store}>
+            <ThemeProvider theme={globalTheme}>{children}</ThemeProvider>
+        </Provider>      
+    )
 )
 
