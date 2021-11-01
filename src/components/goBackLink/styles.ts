@@ -11,6 +11,7 @@ export  const useStyles = makeStyles((theme: Theme) => createStyles({
         paddingTop: '45.15px',
         "& a":{
           position: 'relative',
+          cursor: 'pointer',
           transition: 'opacity .6s',
           '&:hover': {
             opacity: '0.8',

@@ -1,42 +1,55 @@
 import { screen } from '@testing-library/react'
+import userEvent from '@testing-library/user-event';
 import { renderWithTheme } from "utils/tests/helpers";
 import ChooseButton, { ChooseButtonProps } from './ChooseButton'
 
 const props: ChooseButtonProps = {
     handleOnClick: jest.fn(),
     isMobile: false,
-    variant: false,
-    text: 'Choose your path, Pad',
+    variant: true,
+    text: 'choose your path again, Padawan',
     isDisabled: false
 }
 
 describe('<ChooseButton />', () => {
-    it('should render choose button', () => {
+    it('should render choose button able', () => {
         const { container } = renderWithTheme(<ChooseButton {...props} />)
 
         expect(screen.queryByTestId('choose-button')).toBeInTheDocument()
+        expect(screen.queryByTestId('choose-button')).not.toHaveClass("Mui-disabled")
 
         expect(container.firstChild).toMatchSnapshot()
     })
 
-    // it('should render welcome text', () => {
+    it('should call choose button click handle', async () => {
 
-    //     renderWithTheme(<BrandTitle {...props }/>)
+        renderWithTheme(<ChooseButton {...props }/>)
 
-    //     expect(screen.queryByText('Welcome to')).toBeInTheDocument()
-    // })
+        const chooseButton = screen.getByRole('button', {
+            name: 'choose your path again, Padawan'
+        })
 
-    // it('should render brand name text', () => {
+        await userEvent.click(chooseButton)
 
-    //     renderWithTheme(<BrandTitle {...props }/>)
+        expect(props.handleOnClick).toHaveBeenCalled()
+    })
 
-    //     expect(screen.queryByText('IClinic')).toBeInTheDocument()
-    // })
+    it('should render disable button', () => {
 
-    // it('should render brand subtitle text', () => {
+        props.isDisabled = true
 
-    //     renderWithTheme(<BrandTitle {...props }/>)
+        const {getByTestId} = renderWithTheme(<ChooseButton {...props }/>)
 
-    //     expect(screen.queryByText('frontend test')).toBeInTheDocument()
-    // })
+        const chooseButton = getByTestId('choose-button')
+  
+        expect(chooseButton).toHaveClass("Mui-disabled") 
+    })
+
+    it('should render correct button text', () => {
+        const { getByText } = renderWithTheme(<ChooseButton {...props }/>)
+
+        const text = getByText('choose your path again, Padawan')
+  
+        expect(text).toBeInTheDocument() 
+    })
 });

@@ -9,7 +9,7 @@ type IStylesProps = {
 export  const useStyles = makeStyles((theme: Theme) => createStyles({
       root: {
         width: '347px',
-        marginBottom: '77px',
+        marginBottom: 72 + theme.spacing(2),
         marginTop: ({ isMobile }: IStylesProps) => isMobile ? '36px' : '0',
         backgroundColor: ({ variant }: IStylesProps) => variant 
         ? theme.palette.secondary.contrastText

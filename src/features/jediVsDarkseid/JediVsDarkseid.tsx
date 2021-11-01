@@ -19,8 +19,9 @@ import MasterAvatar from 'components/masterAvatar/MasterAvatar';
 const JediVsDarkseid = () => {
   
   const dispatch = useAppDispatch();
-  const isMobile = useMediaQuery('(max-width:600px)');
+  const isMobile = useMediaQuery('(max-width:800px)');
   const yourPath = useAppSelector(selectYourPath);
+  const masterName = useAppSelector(selectMasterName)
   const fetchStatus = useAppSelector(selectFetchStatus)
   const isJedi = useMemo(() => {
     return yourPath === 'jedi'
@@ -30,7 +31,7 @@ const JediVsDarkseid = () => {
 
   return (
     <div className={classes.root}>
-      <GoBackLink variant={isJedi} />
+      <GoBackLink variant={isJedi} url='/welcome' />
       <Container className={classes.container} maxWidth="sm">
         <Grid
           className={classes.gridContainer}
@@ -51,7 +52,7 @@ const JediVsDarkseid = () => {
             variant={isJedi} 
             isMobile={isMobile} 
             text='Your master is'
-            nameSelector={selectMasterName}
+            avatarName={masterName}
           />
         </Grid>
       </Container>

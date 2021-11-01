@@ -21,11 +21,11 @@ export default function ChooseButton({
     
     return (    
       <Grid 
-        data-testid='choose-button'
         item xs={12} 
         style={{ textAlign: 'center' }}
       >
           <Button 
+            data-testid='choose-button'
             className={classes.root}
             onClick={handleOnClick}
             disabled={isDisabled} 

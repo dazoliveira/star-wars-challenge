@@ -4,17 +4,16 @@ import { useAppSelector } from "app/hooks";
 import { RootState } from "app/store";
 import { useStyles } from "./styles";
 
-type MasterAvatarProps = {
+export type MasterAvatarProps = {
     variant: boolean
     isMobile: boolean
     avatarSrc: string
     text: string
-    nameSelector(state: RootState): string | null
+    avatarName?: string | null
 }
 
-export default function MasterAvatar({ variant, isMobile, avatarSrc, nameSelector, text }: MasterAvatarProps) {
+export default function MasterAvatar({ variant, isMobile, avatarSrc, avatarName, text }: MasterAvatarProps) {
 
-    const name = useAppSelector(nameSelector);
     const classes = useStyles({ variant, isMobile })
     
     return (
@@ -38,7 +37,7 @@ export default function MasterAvatar({ variant, isMobile, avatarSrc, nameSelecto
           align='center'
           className={classes.name}
         >
-          {text}<span>{name || '. . .'}</span>
+          {text}<span>{avatarName || '. . .'}</span>
         </Typography>
       </Grid>   
     )

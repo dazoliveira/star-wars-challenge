@@ -1,0 +1,25 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<MasterAvatar /> should render master avatar 1`] = `
+<div
+  class="MuiGrid-root MuiGrid-container MuiGrid-item MuiGrid-direction-xs-column MuiGrid-align-items-xs-center MuiGrid-justify-content-xs-center MuiGrid-grid-xs-12"
+>
+  <div
+    class="MuiAvatar-root MuiAvatar-circular makeStyles-avatar-1 makeStyles-avatar-3"
+  >
+    <img
+      alt="Your Master"
+      class="MuiAvatar-img"
+      src="luke-skywalker.png"
+    />
+  </div>
+  <p
+    class="MuiTypography-root makeStyles-name-2 makeStyles-name-4 MuiTypography-h3 MuiTypography-colorSecondary MuiTypography-alignCenter"
+  >
+    Your master is
+    <span>
+      Luke Skywalker
+    </span>
+  </p>
+</div>
+`;
