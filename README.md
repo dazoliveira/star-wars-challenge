@@ -1,6 +1,6 @@
 # Star Wars Challenge
 
-Star Wars Challenge is a basic exepirence that uses as main tecnologies: typescript, react, redux-toolkit, redux-saga, material UI and some unit tests using react testing library Jest.
+Star Wars Challenge is a basic experience that uses as main technologies: typescript, react, redux-toolkit, redux-saga, material UI and some unit tests using react testing library Jest.
 
 The main aplication goal is to make twoo racing requests and show a result of the winner one,
 showing for the user what "path" is your "destiny", it is dark side or jedi, choosing your master "Darth Vader" or "Luke Skywalker" when "start" or "choose your path again, Padawan" button is clicked.
