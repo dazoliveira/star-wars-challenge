@@ -38,8 +38,8 @@ yarn test
 
 ## Faetures
 
-- feature: /welcome
-- feature: /jedi-vs-darkside
+- route: /welcome
+- route: /jedi-vs-darkside
 
 CLICK START
 - Call API to choose a path
