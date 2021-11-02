@@ -16,7 +16,7 @@ showing for the user what "path" is your "destiny", it is dark side or jedi, cho
 ### Installing
 
 * Clone this repository into your local repository
-* Enter into the project repository and run `yarn` to install all dependecies
+* Enter into the project repository and run `yarn` to install all dependencies
 
 ```
 yarn
@@ -24,7 +24,7 @@ yarn
 
 ### Executing program
 
-* inside the projct folder run yarn start
+* inside the project folder run yarn start
 ```
 yarn start
 ```
