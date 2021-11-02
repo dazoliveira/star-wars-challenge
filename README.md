@@ -36,7 +36,7 @@ yarn start
 yarn test
 ```
 
-## Faetures
+## Features
 
 - route: /welcome
 - route: /jedi-vs-darkside
