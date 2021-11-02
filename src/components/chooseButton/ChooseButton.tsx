@@ -32,14 +32,14 @@ export default function ChooseButton({
     }, [yourPath])
 
     const transitionDuration = {
-      enter: theme.transitions.duration.enteringScreen,
+      enter: 2000,
       exit: theme.transitions.duration.leavingScreen,
     };
     
     return (    
       <Grid 
         item xs={12} 
-        style={{ textAlign: 'center' }}
+        className={classes.root}
       >
         <Zoom
           ref={ref}
@@ -49,8 +49,8 @@ export default function ChooseButton({
           unmountOnExit
         >
           <Button 
+            className={classes.chooseButton}
             data-testid='choose-button'
-            className={classes.root}
             onClick={handleOnClick}
             disabled={isDisabled} 
             variant="contained"

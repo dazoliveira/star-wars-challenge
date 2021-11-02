@@ -8,8 +8,8 @@ type IStylesProps = {
 
 export  const useStyles = makeStyles((theme: Theme) => createStyles({
   avatar: {
-    width: theme.spacing(63),
-    height: theme.spacing(63),
+    width: ({ isMobile }: IStylesProps) => isMobile ? theme.spacing(43) : theme.spacing(63),
+    height: ({ isMobile }: IStylesProps) => isMobile ? theme.spacing(43) : theme.spacing(63),
     marginBottom: ({ isMobile }: IStylesProps) => isMobile ? '19.69px' : '0',
     marginTop: ({ isMobile }: IStylesProps) => isMobile ? '19.85px' : '0',
   },
