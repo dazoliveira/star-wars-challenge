@@ -2,7 +2,7 @@
 
 Star Wars Challenge is a basic exepirence that uses as main tecnologies: typescript, react, redux-toolkit, redux-saga, material UI and some unit tests using react testing library Jest.
 
-The man aplication goal is to make two racing requests and show a result of the winner one,
+The main aplication goal is to make twoo racing requests and show a result of the winner one,
 showing for the user what "path" is your "destiny", it is dark side or jedi, choosing your master "Darth Vader" or "Luke Skywalker" when "start" or "choose your path again, Padawan" button is clicked.
 
 ## Getting Started
@@ -24,7 +24,7 @@ yarn
 
 ### Executing program
 
-* in the projct folder run yarn start
+* inside the projct folder run yarn start
 ```
 yarn start
 ```
@@ -38,8 +38,8 @@ yarn test
 
 ## Faetures
 
-feature: /welcome
-feature: /jedi-vs-darkside
+- feature: /welcome
+- feature: /jedi-vs-darkside
 
 CLICK START
 - Call API to choose a path
