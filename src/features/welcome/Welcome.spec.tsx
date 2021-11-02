@@ -20,7 +20,7 @@ describe('<Welcome />', () => {
         expect(container.firstChild).toMatchSnapshot()
     })
 
-    it('should call start function on start button click',async () => {
+    it('should start button click render request result page',async () => {
         const { getByRole } = renderWithTheme(<Welcome />)
 
         const startButton = getByRole('button')

@@ -1,4 +1,5 @@
-import { Button, Grid } from "@material-ui/core";
+import { useRef, useEffect, useState } from "react";
+import { Button, Grid, useTheme, Zoom } from "@material-ui/core";
 import { useStyles } from "./styles";
 
 export type ChooseButtonProps = {
@@ -7,6 +8,7 @@ export type ChooseButtonProps = {
     variant: boolean
     text: string
     isDisabled: boolean
+    yourPath: string | null
 }
 
 export default function ChooseButton({ 
@@ -14,16 +16,38 @@ export default function ChooseButton({
   isMobile, 
   variant,
   text,
-  isDisabled
+  isDisabled,
+  yourPath
 }: ChooseButtonProps) {
 
+    const theme = useTheme();
+    const ref = useRef()
     const classes = useStyles({ variant,  isMobile})
+
+    const [ value, setValue ] = useState<string | null>('')
+
+    useEffect(() => {
+      setValue('')
+      setTimeout(() => setValue(yourPath), 2000)
+    }, [yourPath])
+
+    const transitionDuration = {
+      enter: theme.transitions.duration.enteringScreen,
+      exit: theme.transitions.duration.leavingScreen,
+    };
     
     return (    
       <Grid 
         item xs={12} 
         style={{ textAlign: 'center' }}
       >
+        <Zoom
+          ref={ref}
+          key={yourPath}
+          in={!!value}
+          timeout={transitionDuration}
+          unmountOnExit
+        >
           <Button 
             data-testid='choose-button'
             className={classes.root}
@@ -33,6 +57,7 @@ export default function ChooseButton({
           >
             {text}
           </Button>
+        </Zoom>
       </Grid>   
     )
 }

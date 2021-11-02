@@ -17,12 +17,17 @@ export function* fetchWinnerPath() {
         }
         yield put(push('/jedi-vs-darkside'))
     } catch (error) {
-        // TODO: handle ERROR
-        console.log('LOG:', error)
         yield put(clean());
     }
   }
 
+ 
+export function* pushWelcomePage() {
+    yield put(push('/welcome'))
+  } 
+  
+
 export default function* jediVsDarkseidSaga(){
     yield takeLatest(fetchYourPath.toString(), fetchWinnerPath)
+    yield takeLatest(clean.toString(), pushWelcomePage)
 }

@@ -1,7 +1,8 @@
-import { useMemo } from 'react';
+import { useMemo, useEffect } from 'react';
 import { Container, Grid, useMediaQuery } from '@material-ui/core';
 
 import {
+  clean,
   fetchYourPath,
   selectFetchStatus,
   selectMasterName,
@@ -29,6 +30,16 @@ const JediVsDarkseid = () => {
   
   const classes = useStyles({ isJedi, isMobile })
 
+  useEffect(() => {
+    if(!masterName){
+      dispatch(clean())
+    }
+    return () => {
+      dispatch(clean())
+    }
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [dispatch])
+
   return (
     <div className={classes.root}>
       <GoBackLink variant={isJedi} url='/welcome' />
@@ -41,6 +52,7 @@ const JediVsDarkseid = () => {
           alignItems="center"
         >
           <ChooseButton  
+            yourPath={yourPath}
             variant={isJedi} 
             isMobile={isMobile} 
             text='choose your path again, Padawan'
